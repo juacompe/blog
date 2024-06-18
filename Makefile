@@ -1,10 +1,13 @@
-.PHONY: e2e run test
+.PHONY: e2e migrate run test
 
-e2e:
+e2e: migrate
 	bundle exec cucumber --publish-quiet
 
-run:
+migrate:
+	rails db:migrate
+
+run: migrate
 	rails s
 
-test:
+test: migrate
 	bundle exec rspec

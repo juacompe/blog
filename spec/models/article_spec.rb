@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'has title and body' do
+    article = Article.new(title: "Hello Rails", body: "I am on Rails!")
+
+    expect(article.title).to eq "Hello Rails"
+    expect(article.body).to eq "I am on Rails!"
+  end
 end
