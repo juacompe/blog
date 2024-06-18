@@ -9,3 +9,7 @@
 ```
 make test
 ```
+
+```
+make e2e
+```
