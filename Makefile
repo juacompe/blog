@@ -1,7 +1,7 @@
 .PHONY: run test e2e
 
 test:
-	rails test 
+	bundle exec rspec
 
 run:
 	rails s
