@@ -1,22 +1,21 @@
 When('I go to the home page') do
-    visit '/'
+    @article_page = ArticlePage.new
+    @article_page.visit_page
 end
 
 Then('I should see {string}') do |text|
-    expect(page).to have_content(text)
+    @article_page.contains text
 end
 
 When('I create a new article with title {string} and body {string}') do |title, body|
-    click_link "New Article"
-    expect(page).to have_content "New Article"
+    @new_article_page = @article_page.click_new_article_link
 
-    fill_in 'Title', with: title
-    fill_in 'Body', with: body
-
-    click_button 'Create Article'
+    @new_article_page.fill_title title
+    @new_article_page.fill_body body
+    @show_page = @new_article_page.submit
 end
 
 Then('I should see title {string} and body {string} on show page') do |title, body|
-    expect(page).to have_content(title)
-    expect(page).to have_content(body)
+    @show_page.contains title
+    @show_page.contains body
 end
