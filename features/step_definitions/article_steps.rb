@@ -15,3 +15,7 @@ Then('I should see title {string} and body {string} on show page') do |title, bo
     @show_page.contains title
     @show_page.contains body
 end
+
+Then('I should a link to edit {string}') do |title|
+    pending # Write code here that turns the phrase above into concrete actions
+end

@@ -4,3 +4,9 @@ Feature: Create and update Article
         Given I go to the article page
         When I create a new article with title "Hello Rails" and body "I am on Rails!"
         Then I should see title "Hello Rails" and body "I am on Rails!" on show page
+
+    @doing
+    Scenario: Author see article list
+        Given I create a new article with title "Hello Rails" and body "I am on Rails!"
+        When I go to the article page
+        Then I should a link to edit "Hello Rails"
