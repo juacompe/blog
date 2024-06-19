@@ -7,6 +7,7 @@ Feature: Create and update Article
 
     @doing
     Scenario: Author see article list
-        Given I create a new article with title "Hello Rails" and body "I am on Rails!"
+        Given I go to the article page
+        And I create a new article with title "Hello Rails" and body "I am on Rails!"
         When I go to the article page
         Then I should a link to edit "Hello Rails"

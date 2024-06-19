@@ -1,6 +1,6 @@
-.PHONY: ci e2e migrate run test
+.PHONY: e2e-ci e2e migrate run test
 
-ci : migrate
+e2e-ci : migrate
 	bundle exec cucumber --publish-quiet --tags "not @doing"
 
 e2e: migrate
