@@ -1,4 +1,4 @@
-When('I go to the article page') do
+Given('I go to the article page') do
     @article_page = ArticlePage.new
     @article_page.visit_page
 end
